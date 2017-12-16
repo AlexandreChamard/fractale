@@ -14,11 +14,9 @@ SRC		= 	main.c				\
 			init.c				\
 			close.c				\
 			input.c				\
-			init_map.c			\
 			map.c				\
-			chunk.c				\
 			camera.c			\
-			mapp.c				\
+			draw.c				\
 
 MKLIB		=	make -C ./lib/
 
@@ -30,7 +28,7 @@ _OBJ		=	$(SRC:.c=.o)
 
 OBJ		=	$(patsubst %,$(ODIR)/%,$(_OBJ))
 
-NAME		=	a.out
+NAME		=	mandelbrot
 
 all		:	mkobj mlib $(NAME)
 

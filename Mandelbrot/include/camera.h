@@ -5,7 +5,7 @@
 ** Login   <alexandre.chamard-bois@epitech.eu@epitech.eu>
 **
 ** Started on  Sat Aug 19 18:36:06 2017 Alexandre Chamard-bois
-** Last update Sat Dec 16 18:05:17 2017 alexandre Chamard-bois
+** Last update Sat Dec 16 18:41:05 2017 alexandre Chamard-bois
 */
 
 #ifndef CAMERA_H_
@@ -26,6 +26,6 @@ typedef struct  s_camera
   float         zoom;
 }               t_camera;
 
-int init_camera(t_camera *camera, t_map *map);
+int init_camera(t_camera *camera);
 
 #endif

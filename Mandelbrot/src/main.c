@@ -5,7 +5,7 @@
 ** Login   <alexandre.chamard-bois@epitech.eu>
 **
 ** Started on  Fri Jun  2 12:43:05 2017 alexandre Chamard-bois
-** Last update Sat Dec 16 15:26:11 2017 alexandre Chamard-bois
+** Last update Sat Dec 16 19:00:12 2017 alexandre Chamard-bois
 */
 
 #include "libmy.h"
@@ -36,7 +36,7 @@ void loop(t_box *box) {
 
 	clock_gettime(CLOCK_MONOTONIC_RAW, &frame_time);
 	while (!box->close) {
-		if (new_frame(&frame_time)) {
+		// if (new_frame(&frame_time)) {
 			if (get_input(box)) {
 				break;
 			}
@@ -52,17 +52,19 @@ void loop(t_box *box) {
 			//     fps = 0;
 			//     t = time(NULL);
 			// }
-		}
+		// }
 	}
 }
 
-int main(int ac, char **av)
+int main()
 {
 	t_box box;
 
-	if (init_box(&box, ac, av)) {
+	if (init_box(&box)) {
 		return (1);
 	}
+	my_printf("les fleches pour bouger.\n");
+	my_printf("P et M pour zommer.\n");
 	loop(&box);
 	sfRenderWindow_close(box.window);
 	return (0);

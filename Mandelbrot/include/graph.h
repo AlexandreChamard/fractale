@@ -5,7 +5,7 @@
 ** Login   <alexandre.chamard-bois@epitech.eu@epitech.eu>
 **
 ** Started on  Sat Aug 19 11:51:56 2017 Alexandre Chamard-bois
-** Last update Sat Dec 16 15:32:23 2017 alexandre Chamard-bois
+** Last update Sat Dec 16 18:58:54 2017 alexandre Chamard-bois
 */
 
 #ifndef GRAPH_H_
@@ -18,8 +18,8 @@
 # include "map.h"
 # include "camera.h"
 
-# define WIDTH          500
-# define HEIGHT         500
+# define WIDTH          200
+# define HEIGHT         200
 
 # define FPS            60
 
@@ -49,7 +49,7 @@ typedef struct      s_box
 // INIT //
 void  clear_buff(t_buff *buff);
 int   init_sprite(t_sprite *sprite, const int width, const int height);
-int   init_box(t_box *box, int ac, char **av);
+int   init_box(t_box *box);
 
 // CLOSE //
 void free_sprite(t_sprite *);

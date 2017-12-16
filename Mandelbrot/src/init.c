@@ -5,7 +5,7 @@
 ** Login   <alexandre.chamard-bois@epitech.eu@epitech.eu>
 **
 ** Started on  Sun Jul  2 23:16:51 2017 Alexandre Chamard-bois
-** Last update Sat Dec 16 12:10:39 2017 alexandre Chamard-bois
+** Last update Sat Dec 16 19:00:57 2017 alexandre Chamard-bois
 */
 
 #include <stdlib.h>
@@ -55,16 +55,10 @@ int	init_sprite(t_sprite *sprite, const int width, const int height)
 	return (0);
 }
 
-int	init_box(t_box *box, int ac, char **av)
+int	init_box(t_box *box)
 {
 	box->close = 0;
-	if (ac != 2) {
-		return (1);
-	}
-	if (recup_map(av[1], &box->map)) {
-		return (1);
-	}
-	init_camera(&box->camera, &box->map);
+	init_camera(&box->camera);
 	if (!(box->window = create_window("SFML Window", WIDTH, HEIGHT))) {
 		return (1);
 	}

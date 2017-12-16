@@ -5,7 +5,7 @@
 ** Login   <alexandre@epitech.net>
 **
 ** Started on  Sat Dec 16 15:12:47 2017 alexandre Chamard-bois
-** Last update Sat Dec 16 15:13:38 2017 alexandre Chamard-bois
+** Last update Sat Dec 16 18:43:12 2017 alexandre Chamard-bois
 */
 
 #ifndef MATH_H_
