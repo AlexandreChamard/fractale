@@ -5,7 +5,7 @@
 ** Login   <alexandre.chamard-bois@epitech.eu@epitech.eu>
 **
 ** Started on  Sat Aug 19 18:23:47 2017 Alexandre Chamard-bois
-** Last update Sat Dec 16 11:58:14 2017 alexandre Chamard-bois
+** Last update Sat Dec 16 18:08:11 2017 alexandre Chamard-bois
 */
 
 #include "camera.h"
@@ -13,9 +13,9 @@
 
 int	move_vertical(t_box *box)
 {
-	if (sfKeyboard_isKeyPressed(sfKeyUp) && box->camera.y - SPEED >= 0) {
+	if (sfKeyboard_isKeyPressed(sfKeyUp)) {
 		box->camera.y -= SPEED;
-	} else if (sfKeyboard_isKeyPressed(sfKeyDown) && box->camera.y + SPEED < box->map.height) {
+	} else if (sfKeyboard_isKeyPressed(sfKeyDown)) {
 		box->camera.y += SPEED;
 	}
 	return (0);
@@ -23,9 +23,9 @@ int	move_vertical(t_box *box)
 
 int	move_horizontal(t_box *box)
 {
-	if (sfKeyboard_isKeyPressed(sfKeyLeft) && box->camera.x - SPEED >= 0) {
+	if (sfKeyboard_isKeyPressed(sfKeyLeft)) {
 		box->camera.x -= SPEED;
-	} else if (sfKeyboard_isKeyPressed(sfKeyRight) && box->camera.x + SPEED < box->map.width) {
+	} else if (sfKeyboard_isKeyPressed(sfKeyRight)) {
 		box->camera.x += SPEED;
 	}
 	return (0);
@@ -33,18 +33,18 @@ int	move_horizontal(t_box *box)
 
 int	zoom(t_box *box)
 {
-	if (sfKeyboard_isKeyPressed(sfKeyM) && box->camera.zoom - SPEED_ZOOM >= ZOOM_MIN) {
-		box->camera.zoom -= SPEED_ZOOM;
-	} else if (sfKeyboard_isKeyPressed(sfKeyP) && box->camera.zoom + SPEED_ZOOM < ZOOM_MAX) {
-		box->camera.zoom += SPEED_ZOOM;
+	if (sfKeyboard_isKeyPressed(sfKeyM)) {
+		box->camera.zoom /= SPEED_ZOOM;
+	} else if (sfKeyboard_isKeyPressed(sfKeyP)) {
+		box->camera.zoom *= SPEED_ZOOM;
 	}
 	return (0);
 }
 
 int	init_camera(t_camera *camera, t_map *map)
 {
-	camera->x = map->width / 2;
-	camera->y = map->height / 2;
+	camera->x = 0;
+	camera->y = 0;
 	camera->zoom = 1.0;
 	return (0);
 }

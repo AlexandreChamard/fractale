@@ -5,7 +5,7 @@
 ** Login   <alexandre.chamard-bois@epitech.eu>
 **
 ** Started on  Fri Jun  2 12:43:05 2017 alexandre Chamard-bois
-** Last update Sat Dec 16 12:14:22 2017 alexandre Chamard-bois
+** Last update Sat Dec 16 15:26:11 2017 alexandre Chamard-bois
 */
 
 #include "libmy.h"
@@ -42,7 +42,7 @@ void loop(t_box *box) {
 			}
 			sfRenderWindow_clear(box->window, sfBlack);
 			clear_buff(box->background.buff);
-			print_map(box);
+			draw(box);
 			sfTexture_updateFromPixels(box->background.texture, box->background.buff->pxs, WIDTH, HEIGHT, 0, 0);
 			sfRenderWindow_drawSprite(box->window, box->background.sprite, NULL);
 			sfRenderWindow_display(box->window);

@@ -5,7 +5,7 @@
 ** Login   <alexandre.chamard-bois@epitech.eu@epitech.eu>
 **
 ** Started on  Sat Aug 19 11:51:56 2017 Alexandre Chamard-bois
-** Last update Fri Sep 29 22:34:42 2017 Alexandre Chamard-bois
+** Last update Sat Dec 16 15:32:23 2017 alexandre Chamard-bois
 */
 
 #ifndef GRAPH_H_
@@ -18,8 +18,8 @@
 # include "map.h"
 # include "camera.h"
 
-# define WIDTH          200
-# define HEIGHT         200
+# define WIDTH          500
+# define HEIGHT         500
 
 # define FPS            60
 
@@ -57,6 +57,7 @@ void free_sprite(t_sprite *);
 int  get_input(t_box *box);
 
 // PRINT //
+void	draw(t_box *box);
 void print_map(t_box *box);
 void print_chunk(t_box *box, int x, int y);
 

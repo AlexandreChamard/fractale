@@ -18,12 +18,13 @@ SRC		= 	main.c				\
 			map.c				\
 			chunk.c				\
 			camera.c			\
+			mapp.c				\
 
 MKLIB		=	make -C ./lib/
 
 CFLAGS		+=	-I./include/ -I./lib/include/
 
-LDFLAGS		=	-L./lib/ -lmy -lc_graph_prog_full
+LDFLAGS		=	-L./lib/ -lmy -lc_graph_prog_full -lm
 
 _OBJ		=	$(SRC:.c=.o)
 

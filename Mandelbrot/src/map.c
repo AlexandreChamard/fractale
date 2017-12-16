@@ -5,12 +5,15 @@
 ** Login   <alexandre.chamard-bois@epitech.eu@epitech.eu>
 **
 ** Started on  Sat Aug 19 18:49:22 2017 Alexandre Chamard-bois
-** Last update Sat Dec 16 12:19:50 2017 alexandre Chamard-bois
+** Last update Sat Dec 16 18:05:34 2017 alexandre Chamard-bois
 */
 
 #include "graph.h"
 #include "macro.h"
+#include "mymath.h"
 #include <stdio.h>
+#include <math.h>
+
 
 static void	__parcourt_map(t_box *box, int points[2][2])
 {
@@ -37,4 +40,51 @@ void	print_map(t_box *box)
 	// printf("p1:[%d, %d]\tp2:[%d, %d]\n",
 	//         points[0][0], points[0][1], points[1][0], points[1][1]);
 	// sleep(1);
+}
+
+void	draw(t_box *box)
+{
+	double rangeX[2] = {box->camera.x - box->camera.zoom, box->camera.x + box->camera.zoom};
+	double rangeY[2] = {box->camera.y - box->camera.zoom, box->camera.y + box->camera.zoom};
+	// double range[2] = {-2.5, 2.5};
+	int maxiterations = 400;
+	float a, b;
+	float ca, cb;
+	float aa, bb;
+	int n;
+
+	for (int x = 0; x < WIDTH; x++) {
+		for (int y = 0; y < HEIGHT; y++) {
+			a = map(x, (double[2]){0, WIDTH}, rangeX);
+			b = map(y, (double[2]){0, HEIGHT}, rangeY);
+
+			ca = a;
+			cb = b;
+
+			n = 0;
+			while (n < maxiterations) {
+				aa = a * a - b * b;
+				bb = 2 * a * b;
+				a = aa + ca;
+				b = bb + cb;
+				if (a * a + b * b > 8) {
+					break;
+				}
+				n++;
+			}
+
+			float bright = map(n, (double[2]){0, maxiterations}, (double[2]){0, 1});
+			bright = map(sqrt(bright), (double[2]){0, 1.0}, (double[2]){0, 255.0});
+
+			if (n == maxiterations) {
+				bright = 0;
+			}
+
+			int pix = (x + y * WIDTH) * 4;
+			box->background.buff->pxs[pix + 0] = bright;
+			box->background.buff->pxs[pix + 1] = bright;
+			box->background.buff->pxs[pix + 2] = bright;
+			box->background.buff->pxs[pix + 3] = 255;
+		}
+	}
 }
