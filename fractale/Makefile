@@ -23,7 +23,7 @@ SRC	=	src/main.c			\
 
 OBJ	=	$(SRC:.c=.o)
 
-NAME	=	fractals
+NAME	=	fractal
 
 all	:	$(OBJ)
 		$(CC) -o $(NAME) $(OBJ)
