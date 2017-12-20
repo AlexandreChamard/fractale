@@ -5,7 +5,7 @@
 ** Login   <alexandre.chamard-bois@epitech.eu@epitech.eu>
 **
 ** Started on  Sat Aug 19 18:23:47 2017 Alexandre Chamard-bois
-** Last update Sat Dec 16 18:44:13 2017 alexandre Chamard-bois
+** Last update Sat Dec 16 23:46:27 2017 alexandre Chamard-bois
 */
 
 #include "camera.h"
@@ -43,8 +43,8 @@ int	zoom(t_box *box)
 
 int	init_camera(t_camera *camera)
 {
-	camera->x = 0;
-	camera->y = 0;
-	camera->zoom = 1.0;
+	camera->x = 0.360240443437614363236125244;
+	camera->y = -0.641313061064803174860375015179302066579494952282305259;
+	camera->zoom = .000001;
 	return (0);
 }

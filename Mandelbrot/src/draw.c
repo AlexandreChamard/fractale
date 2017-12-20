@@ -5,7 +5,7 @@
 ** Login   <alexandre.chamard-bois@epitech.eu@epitech.eu>
 **
 ** Started on  Sat Aug 19 18:49:22 2017 Alexandre Chamard-bois
-** Last update Sat Dec 16 22:18:34 2017 alexandre Chamard-bois
+** Last update Mon Dec 18 13:44:42 2017 alexandre Chamard-bois
 */
 
 #include "graph.h"
@@ -16,7 +16,7 @@ void	draw(t_box *box)
 {
 	double rangeX[2] = {box->camera.x - box->camera.zoom, box->camera.x + box->camera.zoom};
 	double rangeY[2] = {box->camera.y - box->camera.zoom, box->camera.y + box->camera.zoom};
-	int maxiterations = 400;
+	int maxiterations = 500;
 
 	for (int x = 0; x < WIDTH; x++) {
 		for (int y = 0; y < HEIGHT; y++) {

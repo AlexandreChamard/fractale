@@ -5,7 +5,7 @@
 ** Login   <alexandre.chamard-bois@epitech.eu@epitech.eu>
 **
 ** Started on  Sat Aug 19 11:51:56 2017 Alexandre Chamard-bois
-** Last update Sat Dec 16 18:58:54 2017 alexandre Chamard-bois
+** Last update Mon Dec 18 13:43:58 2017 alexandre Chamard-bois
 */
 
 #ifndef GRAPH_H_
@@ -18,8 +18,8 @@
 # include "map.h"
 # include "camera.h"
 
-# define WIDTH          200
-# define HEIGHT         200
+# define WIDTH          300
+# define HEIGHT         300
 
 # define FPS            60
 
